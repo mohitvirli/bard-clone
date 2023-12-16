@@ -1,0 +1,25 @@
+<div class="chat-container">
+  <app-message-list></app-message-list>
+
+  <div class="chat-box">
+    <form class="example-form" [formGroup]="formGroup">
+      <button mat-icon-button aria-label="Example icon button with a home icon">
+        <mat-icon>image</mat-icon>
+      </button>
+      <mat-form-field class="example-full-width">
+        <textarea matInput
+          (keydown.enter)="onSubmit($event)"
+          formControlName="textInput"
+          placeholder="Enter a prompt here"
+          cdkTextareaAutosize
+          cdkAutosizeMaxRows="8"></textarea>
+      </mat-form-field>
+      <button mat-icon-button (click)="onSubmit()" [disabled]="submitting">
+        <mat-icon>send</mat-icon>
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- [(ngModel)]="message"
+          [ngModelOptions]="{standalone: true}" -->

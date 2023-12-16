@@ -1,0 +1,35 @@
+:host {
+  display: flex;
+  flex: 1;
+  margin-top: 0.5rem;
+
+  .viewport {
+    flex: 1;
+
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: darkgrey;
+      outline: 1px solid slategrey;
+    }
+  }
+
+  .chat-window {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+
+    @media only screen and (max-width: 600px) {
+      margin: 0;
+      width: 100vw;
+    }
+
+  }
+}

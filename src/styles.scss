@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --active-blue: rgb(168, 199, 250);
+  --black: #000000;
+  --active-green: #135223;
+  --white: #ffffff;
+  --off-white: rgb(189, 193, 198);
+  --chat-bg: #222327;
+  --bot-chat-bg: #131314;
+  --suggestion-card-bg: #0e0e0e;
+  --gradient-text: linear-gradient(90deg,#cf8d7c,#a77cb4);
+}

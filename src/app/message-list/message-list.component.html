@@ -1,0 +1,14 @@
+<cdk-virtual-scroll-viewport itemSize="50" class="viewport" #virtualScroll>
+  <div class="chat-window">
+
+    <app-blank-card *ngIf="!(chatService.messageList$ | async).length"></app-blank-card>
+
+    <ng-container *ngIf="(chatService.messageList$ | async).length">
+      <app-message class="message"
+        [message]="message"
+        [@fadeAnimation]
+        *cdkVirtualFor="let message of chatService.messageList$ | async">
+      </app-message>
+    </ng-container>
+  </div>
+</cdk-virtual-scroll-viewport>

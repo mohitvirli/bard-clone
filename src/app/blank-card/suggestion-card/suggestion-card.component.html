@@ -1,0 +1,7 @@
+<div class="card-wrapper">
+  <h1>{{suggestion?.title}}</h1>
+  <button mat-raised-button *ngFor="let topic of suggestion.topics"
+    (click)="onClick(topic)">
+    {{ topic.title }}
+  </button>
+</div>
