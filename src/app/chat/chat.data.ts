@@ -56,3 +56,29 @@ export const mockSuggestionList: Suggestion[] = [
     ]
   }
 ]
+
+/**
+ * Sample Chat GPT API response.
+ */
+export const sampleGPTResponse = {
+  "id": "chatcmpl-8W32lnx3yo55xnwaVd7sltqlIawUR",
+  "object": "chat.completion",
+  "created": 1702648887,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Hello! How can I assist you today?"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 9,
+    "completion_tokens": 9,
+    "total_tokens": 18
+  },
+  "system_fingerprint": null
+}
