@@ -8,7 +8,6 @@ import { ChatService } from './chat.service';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnDestroy {
-  title = 'bard-clone';
   mobileQuery: MediaQueryList;
 
   private _mobileQueryListener: () => void;
@@ -20,12 +19,10 @@ export class AppComponent implements OnDestroy {
   ) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
-    this.mobileQuery.addListener(this._mobileQueryListener);
+    this.mobileQuery.addEventListener('change', this._mobileQueryListener);
   }
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
-
-
 }

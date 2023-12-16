@@ -16,7 +16,7 @@ import { MessageComponent } from './message/message.component';
     MessageComponent,
     MatListModule,
     ScrollingModule,
-    // BlankCardComponent,
+    BlankCardComponent,
   ],
   templateUrl: './message-list.component.html',
   styleUrl: './message-list.component.scss',
