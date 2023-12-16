@@ -1,0 +1,43 @@
+
+
+  .chat-box {
+    form {
+      display: flex;
+      align-items: center;
+      max-width: 62rem;
+      margin: 0 auto;
+
+      button {
+        margin-bottom: 1rem;
+      }
+      mat-form-field {
+        flex: 1;
+
+        .mat-mdc-text-field-wrapper {
+          border-radius: 1.75rem;
+          border: 2px solid var(--off-white);
+          background-color: var(--black);
+
+          &.mdc-text-field--focused {
+            border-color: var(--active-blue);
+            border-width: 2px;
+          }
+
+          .mat-mdc-form-field-focus-overlay {
+            background-color: var(--black);
+          }
+
+          .mdc-line-ripple {
+            &::before, &::after {
+              content: none;
+            }
+          }
+
+          textarea {
+            caret-color: var(--white);
+          }
+        }
+
+      }
+    }
+  }

@@ -5,8 +5,8 @@ import { ChangeDetectionStrategy, Component, ElementRef, Input, OnInit, ViewChil
 import { MatListModule } from '@angular/material/list';
 import { delay, distinctUntilChanged, filter, tap } from 'rxjs';
 import { BlankCardComponent } from '../blank-card/blank-card.component';
-import { ChatService } from '../chat.service';
-import { MessageComponent } from './message/message.component';
+import { ChatService } from '../../chat.service';
+import { MessageComponent } from '../message/message.component';
 
 @Component({
   selector: 'app-message-list',

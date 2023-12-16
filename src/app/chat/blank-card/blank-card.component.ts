@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ChatService } from '../chat.service';
-import { SuggestionCardComponent } from './suggestion-card/suggestion-card.component';
+import { ChatService } from '../../chat.service';
+import { SuggestionCardComponent } from '../suggestion-card/suggestion-card.component';
 
 @Component({
   selector: 'app-blank-card',
