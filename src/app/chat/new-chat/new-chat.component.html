@@ -6,7 +6,9 @@
 
     <div class="prevent-overflow">
       <div class="suggestion-card-container">
-        <app-suggestion-card *ngFor="let suggestion of suggestionList" [suggestion]="suggestion"></app-suggestion-card>
+        <app-suggestion-card *ngFor="let suggestion of suggestionList"
+          [suggestion]="suggestion">
+        </app-suggestion-card>
       </div>
     </div>
   </div>

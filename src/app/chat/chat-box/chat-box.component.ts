@@ -18,7 +18,6 @@ import { ChatService } from '../chat.service';
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-
     ReactiveFormsModule,
   ],
   templateUrl: './chat-box.component.html',
@@ -27,22 +26,39 @@ import { ChatService } from '../chat.service';
   encapsulation: ViewEncapsulation.None,
 })
 export class ChatBoxComponent {
-  formGroup = new FormGroup({
-    textInput: new FormControl(''),
+  /**
+   * The form group to handle the value changes on input change.
+   */
+  formGroup = new FormGroup<{ textInput: FormControl}>({
+    textInput: new FormControl<string>(''),
   })
 
+  /**
+   * If the Form is submitting.
+   */
   submitting = false;
 
-  constructor(private chatService: ChatService, private route: ActivatedRoute) {}
+  constructor(private chatService: ChatService) {}
 
-  onSubmit(event?: any) {
+  /**
+   * On submitting the prompt
+   * @param event Optionallly called by the Keybaord event on Enter.
+   */
+  onSubmit(event?: KeyboardEvent) {
+    // If enter key is pressed then also submit the prompt.
     event?.preventDefault();
-    const value = this.formGroup.controls.textInput.value as string;
+
+    const value = this.formGroup.controls.textInput.value.trim();
+
+    // Only submit if the form is not being submitted already or the value is
+    // present.
     if (!this.submitting && value) {
       this.submitting = true;
+
       this.chatService.sendMessage(value.trim())
         .finally(() => this.submitting = false);
 
+      // reset the value.
       this.formGroup.controls.textInput.setValue('');
     }
   }

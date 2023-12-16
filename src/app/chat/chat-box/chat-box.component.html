@@ -1,16 +1,17 @@
 <div class="chat-box">
-  <form class="app-form" [formGroup]="formGroup">
-    <button mat-icon-button aria-label="app icon button with a home icon">
-      <mat-icon>image</mat-icon>
-    </button>
-    <mat-form-field class="app-full-width">
+  <form [formGroup]="formGroup">
+    <button mat-icon-button><mat-icon>image</mat-icon></button>
+
+    <mat-form-field>
       <textarea matInput
         (keydown.enter)="onSubmit($event)"
         formControlName="textInput"
         placeholder="Enter a prompt here"
         cdkTextareaAutosize
-        cdkAutosizeMaxRows="8"></textarea>
+        cdkAutosizeMaxRows="8">
+      </textarea>
     </mat-form-field>
+
     <button mat-icon-button (click)="onSubmit()" [disabled]="submitting">
       <mat-icon>send</mat-icon>
     </button>
