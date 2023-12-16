@@ -44,7 +44,7 @@ export class ChatBoxComponent {
    * On submitting the prompt
    * @param event Optionallly called by the Keybaord event on Enter.
    */
-  onSubmit(event?: KeyboardEvent) {
+  onSubmit(event?: Event) {
     // If enter key is pressed then also submit the prompt.
     event?.preventDefault();
 
