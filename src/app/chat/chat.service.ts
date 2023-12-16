@@ -96,7 +96,7 @@ export class ChatService {
       message,
     }, {
       type: 'bot',
-      state: 'loading'
+      isLoading: true
     }]);
 
     return this.chat(message)
@@ -104,7 +104,7 @@ export class ChatService {
         const messageList = [...this.messageList$.value];
         messageList.splice(messageList.length - 1, 1, {
           type: 'bot',
-          state: 'success',
+          isLoading: false,
           message: response,
         });
 

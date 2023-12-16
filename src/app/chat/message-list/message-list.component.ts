@@ -17,6 +17,7 @@ import { MessageComponent } from '../message/message.component';
   ],
   templateUrl: './message-list.component.html',
   styleUrl: './message-list.component.scss',
+  // Add Animations in entering the chat message.
   animations: [
     trigger('fadeAnimation', [
       transition(':enter', [
@@ -27,16 +28,23 @@ import { MessageComponent } from '../message/message.component';
   ]
 })
 export class MessageListComponent implements OnInit {
-
+  /**
+   * The reference to the virtual scroll bar.
+   */
   @ViewChild("virtualScroll", { static: true }) virtualScrollViewport: CdkVirtualScrollViewport | undefined;
 
   constructor(public chatService: ChatService) {}
 
   ngOnInit() {
+    // On message list update, scroll to bottom.
     this.chatService.messageList$.subscribe(() => this.scrollToBottom());
   }
 
+  /**
+   * Scroll to bottom handy function.
+   */
   scrollToBottom() {
+    // Need to use settimeout due to some issues with Virtual Scroll.
     setTimeout(
       () => {
         (this.virtualScrollViewport as CdkVirtualScrollViewport).scrollTo({

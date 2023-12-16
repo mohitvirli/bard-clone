@@ -1,18 +1,25 @@
-<div class="message-container" *ngIf="message.type === 'user'">
+<!-- Message from the User -->
+<div class="message-container" *ngIf="message?.type === 'user'">
   <div class="message-wrapper">
     <mat-icon class="user-icon" fontIcon="face" color="accent"></mat-icon>
-    <div class="content" [innerHtml]="message.message"></div>
+    <div class="content" [innerHtml]="message?.message"></div>
   </div>
 </div>
 
-<div class="message-container bot-response" *ngIf="message.type === 'bot'">
+<!-- Message from the Bot -->
+<div class="message-container bot-response" *ngIf="message?.type === 'bot'">
   <div class="message-wrapper">
-    <!-- <mat-icon class="user-icon" fontIcon="smart_toy" *ngIf="message.state === 'success'"></mat-icon> -->
-    <img *ngIf="message.state === 'success'" src="assets/bard-logo.svg" class="bard-logo"/>
-    <mat-spinner *ngIf="message.state === 'loading'" color="accent" diameter="48"></mat-spinner>
-    <div class="content" [innerHtml]="message.message"></div>
+    <img *ngIf="!message?.isLoading" src="assets/bard-logo.svg" class="bard-logo"/>
+
+    <!-- Show the loader if message is loading -->
+    <mat-spinner *ngIf="message?.isLoading" color="accent" diameter="48"></mat-spinner>
+
+    <!-- The message content formatted accordingly -->
+    <div class="content" *ngIf="!message?.isLoading" [innerHtml]="message?.message"></div>
   </div>
-  <div class="extra-actions" *ngIf="message.state !== 'loading'">
+
+  <!-- TODO: Additional Actions, not working as of yet -->
+  <div class="extra-actions" *ngIf="!message?.isLoading">
     <button mat-icon-button><mat-icon>thumb_up</mat-icon></button>
     <button mat-icon-button><mat-icon>thumb_down</mat-icon></button>
     <button mat-icon-button><mat-icon>tune</mat-icon></button>

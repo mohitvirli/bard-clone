@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { Message } from '../chat.model';
 
 @Component({
   selector: 'app-message',
@@ -19,5 +20,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   styleUrl: './message.component.scss',
 })
 export class MessageComponent {
-  @Input() message: any;
+  /**
+   * The input message.
+   */
+  @Input() message?: Message;
 }
