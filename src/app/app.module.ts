@@ -9,7 +9,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ChatService } from './chat.service';
+import { ChatService } from './chat/chat.service';
 import { ChatComponent } from './chat/chat.component';
 
 @NgModule({

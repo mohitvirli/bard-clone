@@ -6,7 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { ActivatedRoute } from '@angular/router';
-import { ChatService } from '../../chat.service';
+import { ChatService } from '../chat.service';
 
 @Component({
   selector: 'app-chat-box',

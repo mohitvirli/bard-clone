@@ -1,7 +1,10 @@
 <div class="chat-container">
-  <!-- Message list -->
-  <app-message-list></app-message-list>
+  <!-- If no active chat, then show new chat box -->
+  <app-new-chat *ngIf="!(chatService.messageList$ | async).length"></app-new-chat>
 
-  <!-- Chat box  -->
+  <!-- Message list, if there is an active conversation -->
+  <app-message-list *ngIf="(chatService.messageList$ | async).length"></app-message-list>
+
+  <!-- Chat input box  -->
   <app-chat-box></app-chat-box>
 </div>

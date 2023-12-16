@@ -8,10 +8,13 @@
   h1 {
     margin-top: 0rem;
     font-weight: bolder;
+
+    // Used the colors from the website itself.
     background: var(--gradient-text);
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
   button {
     display: block;
     margin-top: 1rem;

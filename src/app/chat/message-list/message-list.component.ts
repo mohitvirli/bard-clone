@@ -1,11 +1,9 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { CdkVirtualScrollViewport, ScrollingModule } from '@angular/cdk/scrolling';
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatListModule } from '@angular/material/list';
-import { delay, distinctUntilChanged, filter, tap } from 'rxjs';
-import { BlankCardComponent } from '../blank-card/blank-card.component';
-import { ChatService } from '../../chat.service';
+import { ChatService } from '../chat.service';
 import { MessageComponent } from '../message/message.component';
 
 @Component({
@@ -16,7 +14,6 @@ import { MessageComponent } from '../message/message.component';
     MessageComponent,
     MatListModule,
     ScrollingModule,
-    BlankCardComponent,
   ],
   templateUrl: './message-list.component.html',
   styleUrl: './message-list.component.scss',

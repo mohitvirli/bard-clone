@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { ChatService } from '../../chat.service';
+import { Suggestion, SuggestionTopic } from '../chat.model';
+import { ChatService } from '../chat.service';
 
 @Component({
   selector: 'app-suggestion-card',
@@ -15,11 +16,19 @@ import { ChatService } from '../../chat.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SuggestionCardComponent {
-  @Input() suggestion: any;
+  /**
+   * Pass the suggestion to the component.
+   */
+  @Input() suggestion?: Suggestion;
 
   constructor(private chatService: ChatService) {}
 
-  onClick(topic: any) {
+  /**
+   * On clicking a topic, send the prompt to start the conversation.
+   * 
+   * @param topic The topic
+   */
+  onClick(topic: SuggestionTopic) {
     this.chatService.sendMessage(topic.prompt);
   }
  }

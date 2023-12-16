@@ -1,6 +1,6 @@
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
-import { ChatService } from './chat.service';
+import { ChatService } from './chat/chat.service';
 
 @Component({
   selector: 'app-root',
