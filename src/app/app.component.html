@@ -1,12 +1,13 @@
 
-<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-  <mat-toolbar class="example-toolbar">
+<div class="app-container" [class.app-is-mobile]="mobileQuery.matches">
+  <!-- Toolbar -->
+  <mat-toolbar class="app-toolbar">
     <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
     <h1 class="app-name">Bard <small>Experiment</small></h1>
   </mat-toolbar>
 
-
-  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+  <!-- Sidenavbar -->
+  <mat-sidenav-container class="app-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
     <mat-sidenav #snav
       [mode]="mobileQuery.matches ? 'over' : 'side'"
       [fixedInViewport]="mobileQuery.matches"
@@ -14,8 +15,14 @@
       fixedTopGap="56">
       <mat-nav-list>
         <div mat-list-item>
-          <button mat-raised-button [routerLink]="'chat'" class="new-chat"><mat-icon>add</mat-icon>New Chat</button>
+          <button mat-raised-button [routerLink]="'chat'" class="new-chat">
+            <mat-icon>add</mat-icon>New Chat
+          </button>
         </div>
+
+        <!-- TODO: This can be a component in itself which would handle all the recent conversations with
+              pagination etc if required -->
+        <!-- List of conversations -->
         <a mat-list-item *ngFor="let conversation of chatService.conversationList$ | async"
           class="conversation-link"
           routerLinkActive="is-active"
@@ -23,6 +30,7 @@
       </mat-nav-list>
     </mat-sidenav>
 
+    <!-- Nav content -->
     <mat-sidenav-content>
       <router-outlet></router-outlet>
     </mat-sidenav-content>

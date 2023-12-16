@@ -2,11 +2,11 @@
   <app-message-list></app-message-list>
 
   <div class="chat-box">
-    <form class="example-form" [formGroup]="formGroup">
-      <button mat-icon-button aria-label="Example icon button with a home icon">
+    <form class="app-form" [formGroup]="formGroup">
+      <button mat-icon-button aria-label="app icon button with a home icon">
         <mat-icon>image</mat-icon>
       </button>
-      <mat-form-field class="example-full-width">
+      <mat-form-field class="app-full-width">
         <textarea matInput
           (keydown.enter)="onSubmit($event)"
           formControlName="textInput"

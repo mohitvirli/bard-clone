@@ -1,4 +1,4 @@
-.example-container {
+.app-container {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -6,68 +6,66 @@
   bottom: 0;
   left: 0;
   right: 0;
-}
 
-.example-is-mobile .example-toolbar {
-  position: fixed;
-  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
-  z-index: 2;
-}
-
-.app-name {
-  font-weight: 300;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-
-  small {
-    font-weight: 100;
-    font-weight: 400;
-    font-size: 0.75rem;
-    color: var(--active-blue);
-    border: 1px solid var(--active-blue);
-    padding: 0.2rem;
-    line-height: 0.75rem;
-    border-radius: 0.5rem;
-  }
-}
-
-.example-sidenav-container {
-  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
-     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
-  flex: 1;
-}
-
-.example-is-mobile .example-sidenav-container {
-  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
-     `<body>` to be our scrolling element for mobile layouts. */
-  flex: 1 0 auto;
-}
-mat-toolbar {
-  background-color: var(--black);
-}
-
-mat-sidenav {
-  width: 20rem;
-  background-color: var(--black);
-  border: none;
-
-  mat-nav-list {
-    padding: 0.5rem 1rem;
-
-    .new-chat {
-      margin-left: 1rem;
-      margin-bottom: 1.5rem;
+  &.app-is-mobile {
+    .app-toolbar {
+      position: fixed;
+      z-index: 2;
     }
 
-    .conversation-link {
-      border-radius: 1.5rem;
+    .app-sidenav-container {
+      flex: 1 0 auto;
+    }
+  }
 
-      &.is-active {
-        background-color: var(--active-green);
+  .app-name {
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 
-        &:focus::before {
-          opacity: 0;
+    small {
+      font-weight: 100;
+      font-weight: 400;
+      font-size: 0.75rem;
+      color: var(--active-blue);
+      border: 1px solid var(--active-blue);
+      padding: 0.2rem;
+      line-height: 0.75rem;
+      border-radius: 0.5rem;
+    }
+  }
+
+  mat-toolbar {
+    background-color: var(--black);
+  }
+
+  .app-sidenav-container {
+    flex: 1;
+
+    mat-sidenav {
+      width: 20rem;
+      background-color: var(--black);
+      border: none;
+
+      mat-nav-list {
+        padding: 0.5rem 1rem;
+
+        .new-chat {
+          margin-left: 1rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .conversation-link {
+          border-radius: 1.5rem;
+
+          &.is-active {
+            background-color: var(--active-green);
+
+            &:focus::before {
+              opacity: 0;
+            }
+          }
         }
       }
     }
