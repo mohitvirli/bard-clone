@@ -1,27 +1,17 @@
-# BardClone
+# Bard Clone
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.6.
 
 ## Development server
+Before running this locally. You'd need to set your OpenAI's API key in the project root in a new file called `.env`.
+You can find the API key here - [Where do I find my API Key](https://help.openai.com/en/articles/4936850-where-do-i-find-my-api-key)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+`.env` file should look like this
+```
+OPENAI_API_KEY='sk-xxxxxxxx'
+```
 
-## Code scaffolding
+After setting the API key, you can use `npm install` and do a `npm start` to navigate to `http://localhost:4200/`.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Attaching some screenshots. The app is Mobile Responsive.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import OpenAI from "openai";
 import { BehaviorSubject } from 'rxjs';
 import { Message } from './chat.model';
-
 
 @Injectable({
   providedIn: 'root'
@@ -40,7 +40,10 @@ export class ChatService {
    */
   activeConversationId: string = '';
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private snackbar: MatSnackBar,
+  ) {}
 
   /**
    * This makes the API request to OpenAI's chat gpt
@@ -134,6 +137,14 @@ export class ChatService {
         this.messageList$.next([...messageList]);
         this.messageCache.set(this.activeConversationId, messageList);
         return messageList;
+      })
+      .catch(err => {
+        // Show the error in the snackbar.
+        const message = err?.message ?? 'Oops! Some Error occured';
+        this.snackbar.open(message, 'Dismiss', {
+          horizontalPosition: 'start'
+        })
+        return [];
       });
   }
 }
