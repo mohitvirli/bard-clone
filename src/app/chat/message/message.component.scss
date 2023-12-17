@@ -1,4 +1,4 @@
-:host {
+app-message {
   display: block;
   padding: 0 1rem;
 
@@ -18,12 +18,35 @@
       width: 3rem;
     }
 
+    &.user-response .content {
+      white-space: pre-wrap;
+    }
+
     .content {
       margin: 0.75rem 1rem;
       flex: 1;
+      min-width: 0;
       line-height: 1.5;
       font-size: 1rem;
-      white-space: pre-wrap;
+
+      code {
+        font-weight: 400;
+        color: var(--code-text);
+        background-color: var(--code-bg);
+        border-radius: 6px;
+        padding: 1px 6px;
+        display: inline-block;
+      }
+
+      pre {
+        margin: 0;
+
+        code {
+          display: block;
+          width: 100%;
+          padding: 1rem;
+        }
+      }
     }
 
     &.bot-response {

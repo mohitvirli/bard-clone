@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'highlight.js/styles/androidstudio.css';
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -13,6 +13,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   --active-green: #135223;
   --white: #ffffff;
   --off-white: rgb(189, 193, 198);
+  --code-text: #c4c7c5;
+  --code-bg: #282a2c;
   --chat-bg: #222327;
   --bot-chat-bg: #131314;
   --suggestion-card-bg: #0e0e0e;

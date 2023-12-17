@@ -1,8 +1,8 @@
 <!-- Message from the User -->
-<div class="message-container" *ngIf="message?.type === 'user'">
+<div class="message-container user-response" *ngIf="message?.type === 'user'">
   <div class="message-wrapper">
     <mat-icon class="user-icon" fontIcon="face" color="accent"></mat-icon>
-    <div class="content" [innerHtml]="message?.message"></div>
+    <div class="content">{{message.message}}</div>
   </div>
 </div>
 
@@ -15,7 +15,7 @@
     <mat-spinner *ngIf="message?.isLoading" color="accent" diameter="48"></mat-spinner>
 
     <!-- The message content formatted accordingly -->
-    <div class="content" *ngIf="!message?.isLoading" [innerHtml]="message?.message"></div>
+    <div class="content" *ngIf="!message?.isLoading" [innerHtml]="parseResponse(message.message)"></div>
   </div>
 
   <!-- TODO: Additional Actions, not working as of yet -->
