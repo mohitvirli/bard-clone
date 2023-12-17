@@ -16,9 +16,11 @@ After setting the API key, you can use `npm install` and do a `npm start` to nav
 Attaching some screenshots. The app is Mobile Responsive.
 
 ### Desktop View
-<img width="1440" alt="Screenshot 2023-12-17 at 01 12 16" src="https://github.com/mohitvirli/bard-clone/assets/11966122/4048a535-7466-41ae-9d9b-a38148998087">
-<img width="1440" alt="Screenshot 2023-12-17 at 01 11 59" src="https://github.com/mohitvirli/bard-clone/assets/11966122/fefeb1da-28d0-4cfe-a98a-b45e8746f5ea">
-<img width="1439" alt="image" src="https://github.com/mohitvirli/bard-clone/assets/11966122/8d920aea-016f-4ff2-acdc-0da059024638">
+<img width="1440" alt="image" src="https://github.com/mohitvirli/bard-clone/assets/11966122/cfe30069-4f29-4a0e-be9e-ef7fb3ace2a4">
+<img width="1440" alt="image" src="https://github.com/mohitvirli/bard-clone/assets/11966122/47994fe8-7fa5-46fe-927b-c7c59b5032cf">
+<img width="1439" alt="image" src="https://github.com/mohitvirli/bard-clone/assets/11966122/cc6417c3-f5bd-4fc4-bded-a22adfe693c8">
+<img width="1440" alt="image" src="https://github.com/mohitvirli/bard-clone/assets/11966122/3e75d14f-d3e2-4da2-825d-a4bb1d6aa0d0">
+
 
 
 ### Mobile View
