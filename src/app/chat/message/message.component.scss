@@ -36,6 +36,8 @@ app-message {
         border-radius: 6px;
         padding: 1px 6px;
         display: inline-block;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
       }
 
       pre {
