@@ -49,9 +49,9 @@ Write in a soothing, calming, reassuring way. Motivate the reader.`
         title: 'language study plan',
         prompt: `I want to learn a new language: Italian.
 
-        You are a professional language tutor, skilled at creating personalized study plans for students of all levels. Create a study plan for me that will help me reach my goal of fluency. I have no knowledge of the language and would like to get to a conversational level in 3 months.
+You are a professional language tutor, skilled at creating personalized study plans for students of all levels. Create a study plan for me that will help me reach my goal of fluency. I have no knowledge of the language and would like to get to a conversational level in 3 months.
 
-        Outline a week-by-week plan for how I can achieve my goal. Include weeks 1-12. Include a detailed curriculum.`
+Outline a week-by-week plan for how I can achieve my goal. Include weeks 1-12. Include a detailed curriculum.`
       },
       {
         title: 'word riddle',
