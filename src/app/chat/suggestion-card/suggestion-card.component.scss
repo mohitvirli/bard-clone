@@ -19,5 +19,9 @@
     display: block;
     margin-top: 1rem;
     font-weight: 200;
+
+    &.is-active {
+      background-color: var(--active-button-blue);
+    }
   }
 }

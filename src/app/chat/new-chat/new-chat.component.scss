@@ -3,12 +3,12 @@
   margin: 0 auto;
   padding-bottom: 2rem;
   flex: 1;
+  overflow-y: scroll;
+  contain: strict;
 
   @media only screen and (max-width: 600px) {
     margin: 0;
     padding-bottom: 0;
-    overflow-y: scroll;
-    contain: strict;
   }
 
   .new-chat-container {
@@ -44,7 +44,7 @@
       }
 
       .suggestion-card-container {
-        margin-top: 2rem;
+        margin-top: 1rem;
         display: flex;
         gap: 1.5rem;
       }

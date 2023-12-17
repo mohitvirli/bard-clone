@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -34,11 +34,23 @@ export class ChatBoxComponent {
   })
 
   /**
+   * The text input element.
+   */
+  @ViewChild('textInput', { static: true }) textInputField!: ElementRef<HTMLTextAreaElement>;
+
+  /**
    * If the Form is submitting.
    */
   submitting = false;
 
-  constructor(private chatService: ChatService) {}
+  constructor(private chatService: ChatService) {
+    // When a topic is selected from the new chat screen, set the value in the
+    // input and also focus the element.
+    this.chatService.selectedTopic$.subscribe(topic => {
+      this.formGroup.controls.textInput.setValue(topic);
+      this.textInputField?.nativeElement.focus();
+    });
+  }
 
   /**
    * On submitting the prompt

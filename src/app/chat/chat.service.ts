@@ -40,6 +40,11 @@ export class ChatService {
    */
   activeConversationId: string = '';
 
+  /**
+   * Currently selected topic (from the new chat screen).
+   */
+  selectedTopic$: BehaviorSubject<string> = new BehaviorSubject('');
+
   constructor(
     private router: Router,
     private snackbar: MatSnackBar,
@@ -146,5 +151,9 @@ export class ChatService {
         })
         return [];
       });
+  }
+
+  setPrompt(message: string) {
+
   }
 }

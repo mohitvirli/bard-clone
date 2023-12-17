@@ -30,12 +30,11 @@
             content: none;
           }
         }
-
-        textarea {
-          caret-color: var(--white);
-        }
       }
 
+      textarea {
+        caret-color: var(--white) !important;
+      }
     }
   }
 }
