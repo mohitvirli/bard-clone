@@ -15,18 +15,27 @@
       fixedTopGap="56">
       <mat-nav-list>
         <div mat-list-item>
-          <button mat-raised-button [routerLink]="'chat'" class="new-chat">
+          <button mat-raised-button
+            [routerLink]="'chat'"
+            routerLinkActive="disabled"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="new-chat">
             <mat-icon>add</mat-icon> New Chat
           </button>
         </div>
 
         <!-- TODO: This can be a component in itself which would handle all the recent conversations with
               pagination etc if required -->
+        <h5 class="recent-title" *ngIf="(chatService.conversationList$ | async).length">Recent</h5>
         <!-- List of conversations -->
-        <a mat-list-item *ngFor="let conversation of chatService.conversationList$ | async"
-          class="conversation-link"
-          routerLinkActive="is-active"
-          [routerLink]="['/chat', conversation.id]">{{ conversation.message }}</a>
+        <div mat-list-item class="conversation-link"
+          *ngFor="let conversation of chatService.conversationList$ | async">
+          <button mat-raised-button [routerLink]="'chat'"
+            routerLinkActive="is-active"
+            [routerLink]="['/chat', conversation.id]">
+            <mat-icon>chat_bubble_outline</mat-icon> {{ conversation.message }}
+          </button>
+        </div>
       </mat-nav-list>
     </mat-sidenav>
 

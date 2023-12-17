@@ -52,19 +52,45 @@
         padding: 0.5rem 1rem;
 
         .new-chat {
-          margin-left: 1rem;
+          margin-left: 0.5rem;
           margin-bottom: 1.5rem;
           border-radius: 1.5rem;
+
+          &.disabled {
+            cursor: default;
+            pointer-events: none;
+            opacity: 0.65;
+          }
+        }
+
+        .recent-title {
+          font-size: 0.75rem;
+          font-weight: 700;
+          margin-left: 1.25rem;
         }
 
         .conversation-link {
           border-radius: 1.5rem;
+          margin-left: 0.5rem;
 
-          &.is-active {
-            background-color: var(--active-green);
+          button {
+            width: 100%;
+            height: 2.25rem;
+            background-color: transparent;
+            justify-content: flex-start;
+            font-weight: 400;
+            border-radius: 1.5rem;
 
-            &:focus::before {
-              opacity: 0;
+            &.is-active {
+              background-color: var(--active-green);
+            }
+
+            span {
+              flex: 1;
+              text-align: left;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
             }
           }
         }
