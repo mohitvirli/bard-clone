@@ -6,6 +6,9 @@
 
   @media only screen and (max-width: 600px) {
     margin: 0;
+    padding-bottom: 0;
+    overflow-y: scroll;
+    contain: strict;
   }
 
   .new-chat-container {
@@ -36,7 +39,7 @@
       padding: 0 1rem;
 
       // Hide horizontal scroll bar
-      &::-webkit-scrollbar  {
+      &::-webkit-scrollbar {
         display: none;
       }
 
