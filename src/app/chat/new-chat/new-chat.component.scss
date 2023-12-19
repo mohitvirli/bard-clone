@@ -6,6 +6,11 @@
   overflow-y: scroll;
   contain: strict;
 
+  // Hide horizontal scroll bar
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   @media only screen and (max-width: 600px) {
     margin: 0;
     padding-bottom: 0;
